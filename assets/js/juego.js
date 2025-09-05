@@ -1,9 +1,10 @@
 let deck = [];
 
-const creacreDeck = () => {
+/* Esta funcion crea una nueva baraja */
+const crearDeck = () => {
   const tipos = ['C', 'D', 'H', 'S']; // Corazones, Diamantes, Tréboles, Picas
   const especiales = ['A', 'J', 'Q', 'K']; // As, Jota, Reina, Rey
-  for (let i = 2; i < 10; i++) {
+  for (let i = 2; i <= 10; i++) {
     for (let tipo of tipos) {
       deck.push(i + tipo);
     }
@@ -15,9 +16,23 @@ const creacreDeck = () => {
     }
   }
   console.log(deck);
-  
   deck = _.shuffle(deck);
   console.log(deck);
   return deck;
 }
-creacreDeck();
+crearDeck();
+
+/* Esta funcion me permite tomar una carta */
+
+const pedirCarta = () => {
+  if (deck.length === 0) {
+    throw 'No hay cartas en el deck';
+  }
+  const carta = deck.pop();
+  console.log(deck);
+  console.log(carta);
+  return carta;
+}
+
+
+pedirCarta(); 
