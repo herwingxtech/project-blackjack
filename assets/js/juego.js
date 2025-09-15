@@ -34,5 +34,13 @@ const pedirCarta = () => {
   return carta;
 }
 
+const valorCarta = (carta) => {
+  const valor = carta.substring(0, carta.length - 1);
+  let puntos;
+  return (isNaN(valor)) ?
+    (valor === 'A') ? 11 : 10
+    : valor * 1;
+}
 
-pedirCarta(); 
+
+console.log(valorCarta(pedirCarta()));
