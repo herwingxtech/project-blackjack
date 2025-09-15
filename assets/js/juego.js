@@ -43,4 +43,5 @@ const valorCarta = (carta) => {
 }
 
 
-console.log(valorCarta(pedirCarta()));
+valor = valorCarta(pedirCarta());
+console.log({ valor });
